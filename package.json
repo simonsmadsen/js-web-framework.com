@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "amdefine": "^1.0.1",
     "js-web": "^1.1.0"
   }
 }

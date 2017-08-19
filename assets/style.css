@@ -172,6 +172,10 @@ pre {
   #content em {
     color: #6EC46C;
     text-decoration: underline; }
+  #content span {
+    color: #6EC46C; }
+  #content h2:first-letter {
+    color: #6EC46C; }
   #content h1 {
     color: #6EC46C;
     border-bottom: 1px solid #6EC46C;
@@ -183,7 +187,6 @@ pre {
     padding-bottom: 10px;
     margin-bottom: 20px; }
   #content h2 {
-    color: #6EC46C;
     font-size: 25px;
     margin-bottom: 10px;
     margin-top: 0px; }
