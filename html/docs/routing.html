@@ -1,0 +1,100 @@
+<h1>Routing</h1>
+
+<h2>Three routing functions</h2>
+
+<pre><code>route()
+postRoute()
+htmlRoute()
+</code></pre>
+
+<h3>route</h3>
+
+<pre><code>route(uri,function)
+</code></pre>
+
+<p>The route function is responding to a GET request, matching the uri parameter.</p>
+
+<p>The function passed to the route, can return an object or a redirect. If you pass an object, will route function send the objact as a json result.</p>
+
+<pre><code>web.route(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
+ return {users: arrayOfUsers}
+})
+</code></pre>
+
+<h3>postRoute</h3>
+
+<p>postRoute(uri,function)</p>
+
+<p>The postRoute function is similar to the route, except it is responding to a POST request.</p>
+
+<pre><code>web.postRoute(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
+ return {users: arrayOfUsers}
+})
+</code></pre>
+
+<h3>htmlRoute</h3>
+
+<p>htmlRoute(uri,pathToHtmlFile,function,injections)</p>
+
+<p>The htmlRoute function is responding to a GET request.</p>
+
+<p>The function passed to the route, can return an object, this object will be used as context in the passed html file. Read more on <a href="/docs/templating">Templating</a>.</p>
+
+<p>You can read about the injections parameter here <a href="/docs/injections">Injections</a></p>
+
+<pre><code>web.postRoute(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
+ return {users: arrayOfUsers}
+})
+</code></pre>
+
+<h3>Paramters</h3>
+
+<p>You can accept paramers in all the route functions</p>
+
+<pre><code>web.post(&#39;/user/:id&#39;, async (input,session,cookie) =&gt; {
+ // input.id
+})
+</code></pre>
+
+<h2>route callback function</h2>
+
+<p>The callback function will recive three parameters (<em>input</em>,<em>session</em>,<em>cookie</em>)</p>
+
+<h3>input</h3>
+
+<p>The input variable contains all input sendt to the route.</p>
+
+<ul>
+	<li>route parameters (/user/:id)</li>
+	<li>posted inputs</li>
+	<li>url query parameter</li>
+</ul>
+
+<p>it has a only function, so you can filter inputs.</p>
+
+<pre><code>(input,session,cookie) =&gt; {
+ user.create( input.only([&#39;name&#39;,&#39;email&#39;]) )
+}
+</code></pre>
+
+<h3>session</h3>
+
+<p>The session variable contains 4 functions (<em>get</em>,<em>set</em>,<em>getFlash</em>,<em>setFlash</em>).</p>
+
+<pre><code>(input,session,cookie) =&gt; {
+ session.get(&#39;key&#39;,&#39;defaultValue&#39;)
+ session.getFlash(&#39;key&#39;,&#39;defaultValue&#39;)
+ session.set(&#39;key&#39;,&#39;value&#39;)
+ session.setFlash(&#39;key&#39;,&#39;value&#39;)
+}
+</code></pre>
+
+<h3>Cookie</h3>
+
+<p>The cookie variable contains 2 functions (<em>get</em>,<em>set</em>).</p>
+
+<pre><code>(input,session,cookie) =&gt; {
+ cookie.get(&#39;key&#39;,&#39;defaultValue&#39;)
+ cookie.set(&#39;key&#39;,&#39;value&#39;)
+}
+</code></pre>
