@@ -56,6 +56,16 @@ htmlRoute()
 })
 </code></pre>
 
+<h3>Redirect</h3>
+
+<p>You can return a redirect in all routes</p>
+<pre><code>web.post('/user/:id', async (input,session,cookie) {
+ return web.redirect('/home')
+})</code></pre>
+<pre><code>web.post('/user/:id', async (input,session,cookie) {
+ return web.back()
+})</code></pre>
+
 <h2>route callback function</h2>
 
 <p>The callback function will recive three parameters (<em>input</em>,<em>session</em>,<em>cookie</em>)</p>

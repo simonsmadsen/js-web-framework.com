@@ -1,1 +1,77 @@
 <h1>Injections</h1>
+<p>Injections allows you to bundle your script and style files, and include them on your site.</p>
+<p>
+  The recommended way to use injections, is to create an injection array.
+</p>
+<pre><code>const injections = [
+    web.inject.jquery(),
+    web.inject.bootstrap(),
+    web.inject.style('style/site.css'),
+    web.inject.script('script/main.js')
+  ]
+</code></pre>
+<p>
+  Then you can add the <span>injections</span> array to all the <span>htmlRoutes</span> as the last parameter.
+</p>
+<pre><code>web.htmlRoute('/','html/index.html', async (input,session,cookie) => {
+  return {}
+},injections)
+</code></pre>
+
+<h2>Inject</h2>
+<h3>Build in liberies</h3>
+<pre><code>const injections = [
+    web.inject.jquery(),
+    web.inject.bootstrap(),
+    web.inject.socketIO()
+  ]
+</code></pre>
+
+<h3>Inject.script()</h3>
+<p>
+  The inject script, can take an file or a url.
+</p>
+<pre><code>const injections = [
+    web.inject.script('script/site.js'),
+    web.inject.script('http://cdn.somelib.com/file.js')
+  ]
+</code></pre>
+<h3>Inject.style()</h3>
+<p>
+  The inject style can take css- , sass- and stylus files.
+</p>
+<pre><code>const injections = [
+    web.inject.style('site.sass'),
+    web.inject.script('site.styl'),
+    web.inject.script('site.css')
+  ]
+</code></pre>
+<h2>React</h2>
+<p>
+  Its possible to inject react to your project.
+</p>
+<p>
+  Add react inject to the injections array.
+</p>
+<pre><code>const injections = [
+    web.inject.react('react/app.jsx','app-id')
+  ]
+</code></pre>
+<p>
+  Create react root/app component
+</p>
+<pre><code>export default class App extends React.Component{
+  render(){
+    return (
+      &#x3C;h1&#x3E; Hey i am react!&#x3C;/h1&#x3E;
+    )
+  }
+}
+</code></pre>
+<p>
+  add a binding div to the html file.
+</p>
+<pre><code>&#x3C;div id="app-id"&#x3E;
+
+&#x3C;/div&#x3E;
+</code></pre>
