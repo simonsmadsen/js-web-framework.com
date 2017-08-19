@@ -178,13 +178,15 @@ pre {
     color: #6EC46C; }
   #content h1 {
     color: #6EC46C;
-    border-bottom: 1px solid #6EC46C;
+    border-top: 1px solid #5F5F5F;
+    border-bottom: 1px solid #5F5F5F;
     display: inline-block;
     margin-bottom: 10px;
     margin-top: 0px;
     font-size: 40px;
     min-width: 250px;
     padding-bottom: 10px;
+    padding-top: 10px;
     margin-bottom: 20px; }
   #content h2 {
     font-size: 25px;

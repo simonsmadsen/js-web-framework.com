@@ -1,1 +1,36 @@
 <h1>Templating</h1>
+<p>
+  js-web is using <a href="handlebarsjs.com">handlebars.js</a> as template engine.
+</p>
+
+<h2>How it works</h2>
+<p>When you have a htmlRoute(<span>uri</span>,<span>file</span>,<span>callback</span>) will js-web take the object returned from the
+ callback fuction and parse it to the tample engine with the giving file. That will make the propperies on the object accessable from the
+html file by wrapping the object key {{objectkey}} </p>
+<pre><code>route('/','html/index.html', _ => {
+  return {username: 'simon'}
+})</code></pre>
+<pre><code>hello: \{{username}}</code></pre>
+<p>
+  Now the html page will display "hello: simon"
+</p>
+
+<h2>Template functions</h2>
+<h3>Foreach</h3>
+<pre><code>\{{#each users}}
+\{{point}} - \{{name}}
+\{{/each}}</code></pre>
+
+<h3>Unless</h3>
+<pre><code>\{{#unless userId}}
+  Please login!
+\{{/unless}}</code></pre>
+
+<h3>If</h3>
+<pre><code>\{{#if userId}}
+    Welcome \{{username}}
+\{{/if}}</code></pre>
+
+<h3>Include</h3>
+<p>The <span>this</span> in the include is passing the context to the included file.</p>
+<pre><code>\{{{include 'web/partials/menu.html' this}}}</code></pre>
