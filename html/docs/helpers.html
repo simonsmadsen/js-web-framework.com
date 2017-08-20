@@ -1,4 +1,20 @@
 <h1>Helpers</h1>
 <p>
-  Comming soon
+  Helper functions:
 </p>
+<pre><code>// console.log(web.helpers)
+{
+  hash: [AsyncFunction: hash],
+  compareHash: [AsyncFunction: compareHash]
+}</code></pre>
+<p>
+  Using the hash functions
+</p>
+<pre><code>const helpers = web.helpers
+const password = 'mypw'
+const hash = helpers.hash(password)
+if(helpers.compareHash('mypw',hash)){
+  return web.redirect('/admin')
+}
+return web.back()
+</code></pre>
