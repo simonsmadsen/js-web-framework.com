@@ -112,8 +112,71 @@ pre {
   width: 100%;
   float:left;
 }
+
+.login-container{
+  height:284px;
+  width:100%;
+  background:white;
+  border-top:2px solid #6EC46C;
+}
+
+#login-modal .modal-content{
+    height: 200px;
+}
+
+.head_title h4{
+  color:#6EC46C;
+  text-align:center;
+  font-size:25px;
+  font-family: Roboto;
+  width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.side-menu .login-btn {
+  border: 2px solid #6EC46C;
+  width: 85%;
+  padding: 3px;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 22px;
+  background-color: #6EC46C;
+  color: white;
+}
+.side-menu .login-btn:hover {
+  border: 2px solid #6EC46C;
+  width: 100%;
+  background-color: #AADCA8;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 7px;
+}
+.pictures {
+  text-align:center;
+}
+.pictures1 {text-align:center;}
+.pictures2 {text-align:center;}
+.pictures3 {text-align:center;}
+.pictures4 {text-align:center;}
+.pictures5 {text-align:center;}
+.pictures img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures1 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures2 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures3 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures4 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures5 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 html {
-  font-familiy: Roboto; }
+  font-family: Roboto; }
 
 body {
   background-color: #F5F5F5; }
@@ -160,6 +223,21 @@ header {
 
 pre {
   max-width: 1000px; }
+
+#questions-content {
+  background-color: white;
+  padding-top: 15px;
+  color: #5F5F5F;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  line-height: 25px; }
+  #questions-content h1 {
+    color: #5F5F5F;
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px; }
 
 #content {
   background-color: white;
@@ -209,6 +287,12 @@ pre {
   margin: 0;
   color: #5F5F5F;
   line-height: 5px; }
+
+.log-pic {
+  opacity: 0.5; }
+
+.log-pic:hover {
+  opacity: 1.0; }
 
 .result-left-icon {
     margin-top: 20px;

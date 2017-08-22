@@ -1,18 +1,18 @@
 <h1>Templating</h1>
 <p>
-  js-web is using <a href="handlebarsjs.com">handlebars.js</a> as template engine.
+  js-web is using <a href="handlebarsjs.com">handlebars.js</a> as the template engine.
 </p>
 
 <h2>How it works</h2>
-<p>When you have a htmlRoute(<span>uri</span>,<span>file</span>,<span>callback</span>) will js-web take the object returned from the
- callback fuction and parse it to the tample engine with the giving file. That will make the propperies on the object accessable from the
-html file by wrapping the object key {{objectkey}} </p>
+<p>When you have a htmlRoute(<span>uri</span>,<span>file</span>,<span>callback</span>), the js-web will take the object returned from the
+ callback fuction and will parse it through the template engine with the giving file. This will make the properties on the object accessible from the
+html file by wrapping the object key \{{objectkey}}. </p>
 <pre><code>route('/','html/index.html', _ => {
   return {username: 'simon'}
 })</code></pre>
 <pre><code>hello: \{{username}}</code></pre>
 <p>
-  Now the html page will display "hello: simon"
+  Now, the html page will display "hello: simon"
 </p>
 
 <h2>Template functions</h2>

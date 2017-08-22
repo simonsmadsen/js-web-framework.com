@@ -28,13 +28,13 @@ db.table('users',{
 </code></pre>
 
 <p>
-  Run the db.js file
+  Run the db.js file.
 </p>
 <pre><code>node db.js</code></pre>
 
-<h2>Using mysql</h2>
+<h2>Using MYSQL</h2>
 <p>
-  Define <span>tables</span> and <span>db</span> const
+  Define <span>tables</span> and <span>db</span> const.
 </p>
 <pre><code>const web = require('js-web')
 const db = web.storage.mysql
@@ -43,7 +43,7 @@ const users = db.table('users')</code></pre>
 
 <h3>Table(tablename)</h3>
 <p>
-  the table functions takes a table name as parameter and it returns an object with following functions.
+  The table function takes a table name as a parameter, and it returns an object with the following functions.
 </p>
 <pre><code>// console.log(db.table('users'))
 {
@@ -58,8 +58,8 @@ const users = db.table('users')</code></pre>
 
 <h2>Storage and routing</h2>
 <p>
-  All mysql call is returning a <span>Promise</span>,
-  so you need to use an <span>async</span> callback function. Now its
+  All MYSQL calls are returning a <span>Promise</span>,
+  so you need to use an <span>async</span> callback function. Now it's
   possible to utilize the <span>await</span> keyword.
 </p>
 <pre><code>web.route('/', async (input) => {

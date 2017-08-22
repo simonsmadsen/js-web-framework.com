@@ -107,3 +107,65 @@ pre {
   width: 100%;
   float:left;
 }
+
+.login-container{
+  height:284px;
+  width:100%;
+  background:white;
+  border-top:2px solid #6EC46C;
+}
+
+#login-modal .modal-content{
+    height: 200px;
+}
+
+.head_title h4{
+  color:#6EC46C;
+  text-align:center;
+  font-size:25px;
+  font-family: Roboto;
+  width: 400px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.side-menu .login-btn {
+  border: 2px solid #6EC46C;
+  width: 85%;
+  padding: 3px;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 22px;
+  background-color: #6EC46C;
+  color: white;
+}
+.side-menu .login-btn:hover {
+  border: 2px solid #6EC46C;
+  width: 100%;
+  background-color: #AADCA8;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 7px;
+}
+.pictures {
+  text-align:center;
+}
+.pictures1 {text-align:center;}
+.pictures2 {text-align:center;}
+.pictures3 {text-align:center;}
+.pictures4 {text-align:center;}
+.pictures5 {text-align:center;}
+.pictures img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures1 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures2 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures3 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures4 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}
+.pictures5 img{width:270px; height:45px; text-align:center; margin-bottom:4px;}

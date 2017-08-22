@@ -1,8 +1,14 @@
 <div class="col-sm-3 col-md-3 side-menu">
+  {{#unless user_id}}
+  <a href="" class="login login-btn">Sign in</a>
+  {{/unless}}
+  {{#if user_id}}
+  <a href="" class="login-btn">Ask question</a>
   <h2>Filters</h2>
   <a href="">All Questions</a>
   <a href="">My Questions</a>
   <a href="">My Participation</a>
+  {{/if}}
   <h2>Categories</h2>
   <a href="">All</a>
   <a href=""></a>

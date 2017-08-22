@@ -1,6 +1,6 @@
 <h1>Creating (MYSQL)</h1>
 <p>
-  The following examples is using this migration
+  The following examples are using this migration:
 </p>
 <pre><code>db.table('users',{
   id: 'id',
@@ -9,13 +9,13 @@
 })</code></pre>
 
 <p>
-  All example using following const definions.
+  All examples below are using these const definitions.
 </p>
 <pre><code>const web = require('js-web')
 const users = db.table('users')</code></pre>
 
 <h3>Create(obj)</h3>
-<p>Use the <span>create(obj)</span> function on the return object from the <span>table</span> function (the users const in this example)</p>
+<p>Use the <span>create(obj)</span> function on the return object, from the <span>table</span> function. In the example below, the users is <span>const users = db.table('users')</p>
 
 <pre><code>const simonsId = await users.create({
   name: 'Simon Madsen',
@@ -24,8 +24,8 @@ const users = db.table('users')</code></pre>
 
 <h3>Create() inside a route</h3>
 <p>
-  Remember to use the <span>await</span> and <span>async</span>, because
-  the create function is returning a <span>Promise</span>.
+  Remember to use the <span>await</span> and <span>async</span>.
+  The create function is returning a <span>Promise</span>.
 </p>
 <pre><code>web.route('/create-user/:name', async (input) => {
   const userId = await users.create({

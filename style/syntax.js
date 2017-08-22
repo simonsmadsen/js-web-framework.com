@@ -133,5 +133,105 @@ export default StyleSheet.create({
         "display": "block",
         "width": "100%",
         "float": "left"
+    },
+    "login-container": {
+        "height": 284,
+        "width": "100%",
+        "background": "white",
+        "borderTop": "2px solid #6EC46C"
+    },
+    "login-modal modal-content": {
+        "height": 200
+    },
+    "head_title h4": {
+        "color": "#6EC46C",
+        "textAlign": "center",
+        "fontSize": 25,
+        "fontFamily": "Roboto",
+        "width": 400,
+        "marginLeft": "auto",
+        "marginRight": "auto",
+        "marginTop": 20,
+        "marginBottom": 20
+    },
+    "side-menu login-btn": {
+        "border": "2px solid #6EC46C",
+        "width": "85%",
+        "paddingTop": 3,
+        "paddingRight": 10,
+        "paddingBottom": 3,
+        "paddingLeft": 10,
+        "textAlign": "center",
+        "fontSize": 15,
+        "marginLeft": 22,
+        "backgroundColor": "#6EC46C",
+        "color": "white"
+    },
+    "side-menu login-btn:hover": {
+        "border": "2px solid #6EC46C",
+        "width": "100%",
+        "backgroundColor": "#AADCA8",
+        "color": "white",
+        "paddingTop": 3,
+        "paddingRight": 10,
+        "paddingBottom": 3,
+        "paddingLeft": 10,
+        "textAlign": "center",
+        "fontSize": 15,
+        "marginLeft": 7
+    },
+    "pictures": {
+        "textAlign": "center"
+    },
+    "pictures1": {
+        "textAlign": "center"
+    },
+    "pictures2": {
+        "textAlign": "center"
+    },
+    "pictures3": {
+        "textAlign": "center"
+    },
+    "pictures4": {
+        "textAlign": "center"
+    },
+    "pictures5": {
+        "textAlign": "center"
+    },
+    "pictures img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
+    },
+    "pictures1 img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
+    },
+    "pictures2 img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
+    },
+    "pictures3 img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
+    },
+    "pictures4 img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
+    },
+    "pictures5 img": {
+        "width": 270,
+        "height": 45,
+        "textAlign": "center",
+        "marginBottom": 4
     }
 });
