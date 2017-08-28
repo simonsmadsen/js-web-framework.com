@@ -79,7 +79,7 @@ web.htmlRoute('/questions/categories/:category/:id', 'html/questions.html', asyn
   questions: (await questionExtended.selectFields(questionExtendedFields, { category_id: input.id }, 'id desc')).map(parseInputText.outputFormat('question')),
   user_id: session.get('user_id'),
   user_name: session.get('user_name'),
-  twitter_url: await web.twitterRequestUrl('http://localhost:8080/twitter-login', session),
+  twitter_url: await web.twitterRequestUrl('http://js-web-framework.com/twitter-login', session),
   categories: await categories.select()
 }), authInjections)
 
