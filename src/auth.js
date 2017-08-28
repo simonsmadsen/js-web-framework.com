@@ -51,7 +51,7 @@ module.exports.createTwitterAccess = async (input) => {
     accessToken: input.accessToken,
     accessTokenSecret: input.accessTokenSecret,
     screen_name: input.screen_name,
-    twitter_id: input.userId,
+    twitter_id: input.user_id,
     user_id: userId
   })
   return userId
