@@ -71,7 +71,7 @@ web.htmlRoute('/questions', 'html/questions.html', async (input, session) => ({
   questions: (await questionExtended.selectFields(questionExtendedFields, null, 'id desc')).map(parseInputText.outputFormat('question')),
   user_id: session.get('user_id'),
   user_name: session.get('user_name'),
-  twitter_url: await web.twitterRequestUrl('http://localhost:8080/twitter-login', session),
+  twitter_url: await web.twitterRequestUrl('https://js-web-framework.com/twitter-login', session),
   categories: await categories.select()
 }), authInjections)
 
@@ -79,7 +79,7 @@ web.htmlRoute('/questions/categories/:category/:id', 'html/questions.html', asyn
   questions: (await questionExtended.selectFields(questionExtendedFields, { category_id: input.id }, 'id desc')).map(parseInputText.outputFormat('question')),
   user_id: session.get('user_id'),
   user_name: session.get('user_name'),
-  twitter_url: await web.twitterRequestUrl('http://js-web-framework.com/twitter-login', session),
+  twitter_url: await web.twitterRequestUrl('https://js-web-framework.com/twitter-login', session),
   categories: await categories.select()
 }), authInjections)
 
@@ -112,7 +112,7 @@ const answersData = async (input, session) => {
   return {
     user_id: session.get('user_id'),
     user_name: session.get('user_name'),
-    twitter_url: await web.twitterRequestUrl('http://localhost:8080/twitter-login', session),
+    twitter_url: await web.twitterRequestUrl('https://js-web-framework.com/twitter-login', session),
     categories: await categories.select(),
     answers: (await answersExtended.selectFields(answerExtendedFields, { question_id: input.id }))
       .map(parseInputText.outputFormat('answer'))
@@ -158,7 +158,7 @@ web.htmlRoute('/questions/edit/:id', 'html/questions/edit.html', async (input, s
   return {
     user_id: session.get('user_id'),
     user_name: session.get('user_name'),
-    twitter_url: await web.twitterRequestUrl('http://localhost:8080/twitter-login', session),
+    twitter_url: await web.twitterRequestUrl('https://js-web-framework.com/twitter-login', session),
     categories: (await categories.select()).map((c) => {
       c.isSelected = question.category_id === c.id ? 'selected' : ''
       return c
@@ -173,7 +173,7 @@ web.htmlRoute('/questions/new', 'html/questions/new.html', async (input, session
   return {
     user_id: session.get('user_id'),
     user_name: session.get('user_name'),
-    twitter_url: await web.twitterRequestUrl('http://localhost:8080/twitter-login', session),
+    twitter_url: await web.twitterRequestUrl('https://js-web-framework.com/twitter-login', session),
     categories: await categories.select()
   }
 }, questionInjections)
