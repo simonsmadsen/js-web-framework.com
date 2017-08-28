@@ -1,4 +1,5 @@
 const db = require('js-web').migration.mysql
+const seed = require('js-web').storage.mysql
 
 /*
   Fieldtypes:
@@ -9,6 +10,38 @@ const db = require('js-web').migration.mysql
   bool,
   text
  */
+
+const seedCategories = async _ => {
+  const categories = seed.table('categories')
+  await categories.truncate()
+  await categories.create({name: 'MYSQL'})
+  await categories.create({name: 'Setup'})
+  await categories.create({name: 'Injection'})
+  await categories.create({name: 'Routing'})
+}
+
+db.table('categories',{
+  id: 'id',
+  name: 'name'
+}).then(seedCategories)
+
+db.table('questions',{
+  id: 'id',
+  category_id: 'category',
+  user_id: 'int',
+  title: 'string',
+  question: 'text',
+  created: 'datetime'
+})
+
+db.table('answers', {
+  id: 'id',
+  question_id: 'int',
+  answer: 'text',
+  created: 'datetime',
+  user_id: 'int',
+  isSolution: 'bool'
+})
 
 db.table('google_access',{
   id: 'id',

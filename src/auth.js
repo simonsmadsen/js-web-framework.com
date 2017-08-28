@@ -1,4 +1,5 @@
 const web = require('js-web')
+
 const social = web.social
 const db = web.storage.mysql
 /**
@@ -9,79 +10,71 @@ const googleAccess = db.table('google_access')
 const twitterAccess = db.table('twitter_access')
 const facebookAccess = db.table('facebook_access')
 
-const createUser = async (name) => {
-   return await users.create({name: name})
-}
+const createUser = name => users.create({ name })
 
-module.exports.getUserByAccess = async (access) => {
-  if(typeof access === "number"){
-      return await users.find({id: access})
+module.exports.getUserByAccess = (access) => {
+  if (typeof access === 'number') {
+    return users.find({ id: access })
   }
-  return await users.find({id: access.user_id})
+  return users.find({ id: access.user_id })
 }
 
 /**
  * Facebook Auth
  */
 
-module.exports.facebookAccessExists = async (input) => {
-  return await facebookAccess.find({facebook_id:input.userID})
-}
+module.exports.facebookAccessExists = input => facebookAccess.find({ facebook_id: input.userID })
 
 module.exports.createFacebookAccess = async (input) => {
-  const user_id = await createUser(input.name)
-  social.getFacebookImage(input.accessToken,'assets/user-images/'+user_id+'.jpg')
+  const userID = await createUser(input.name)
+  social.getFacebookImage(input.accessToken, `assets/user-images/${userID}.jpg`)
   await facebookAccess.create({
     accessToken: input.accessToken,
     signedRequest: input.signedRequest,
-    user_id: user_id,
+    userID,
     expiresIn: input.expiresIn,
     facebook_id: input.userID
-    })
-  return user_id
+  })
+  return userID
 }
 
 /**
  * Twitter Auth
  */
 
-module.exports.twitterAccessExists = async (input) => {
-  return await twitterAccess.find({twitter_id:input.user_id})
-}
+module.exports.twitterAccessExists = input => twitterAccess.find({ twitter_id: input.user_id })
 
 module.exports.createTwitterAccess = async (input) => {
-  const user_id = await createUser(input.screen_name)
-  social.getTwitterImage(input.screen_name,'assets/user-images/'+user_id+'.jpg')
+  const userId = await createUser(input.screen_name)
+  social.getTwitterImage(input.screen_name, `assets/user-images/${userId}.jpg`)
   await twitterAccess.create({
-      accessToken: input.accessToken,
-      accessTokenSecret: input.accessTokenSecret,
-      screen_name: input.screen_name,
-      twitter_id: input.user_id,
-      user_id: user_id
-    })
-  return user_id
+    accessToken: input.accessToken,
+    accessTokenSecret: input.accessTokenSecret,
+    screen_name: input.screen_name,
+    twitter_id: input.userId,
+    userId
+  })
+  return userId
 }
 
 /**
  * Google Auth
  */
-module.exports.googleAccessExists = async (input) => {
-  return await googleAccess.find({google_id:input.id})
-}
+module.exports.googleAccessExists = input => googleAccess.find({ google_id: input.id })
 
 module.exports.createGoogleAccess = async (input) => {
-  const user_id = await createUser(input.givenName+' '+input.familyName)
-  social.getGoogleImage(input.id,'assets/user-images/'+user_id+'.jpg')
+  const userId = await createUser(`${input.givenName} ${input.familyName}`)
+  social.getGoogleImage(input.id, `assets/user-images/${userId}.jpg`)
   await googleAccess.create(Object.assign(
     input.only([
-      'resourceName',,
+      'resourceName',
       'displayName',
       'familyName',
-      'givenName',
-    ]),{
+      'givenName'
+    ]), {
       google_id: input.id,
-      user_id: user_id
+      userId
     }
   ))
-  return user_id
+  return userId
 }

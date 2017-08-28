@@ -28,10 +28,16 @@ export default StyleSheet.create({
         "marginLeft": 0,
         "fontSize": 18
     },
+    "content result-content a": {
+        "color": "#5F5F5F"
+    },
+    "content result-content h2:first-letter": {
+        "color": "#5F5F5F"
+    },
     "who-post": {
         "textTransform": "uppercase",
         "fontWeight": "bold",
-        "color": "#d1d1d1",
+        "color": "#5F5F5F",
         "fontSize": 13
     },
     "category": {
@@ -39,6 +45,27 @@ export default StyleSheet.create({
     },
     "username": {
         "color": "#6EC46C"
+    },
+    "category-color-1": {
+        "color": "#f67363 !important"
+    },
+    "category-color-2": {
+        "color": "#E8AE10 !important"
+    },
+    "category-color-3": {
+        "color": "#1C10E8 !important"
+    },
+    "category-color-4": {
+        "color": "#0CADE8 !important"
+    },
+    "category-color-5": {
+        "color": "#FF5B00 !important"
+    },
+    "category-color-6": {
+        "color": "#6C8DC4 !important"
+    },
+    "category-color-7": {
+        "color": "#C4BB6C !important"
     },
     "question-content hr": {
         "marginTop": 10,
@@ -57,5 +84,10 @@ export default StyleSheet.create({
     "result-section h4": {
         "color": "#cacaca",
         "marginTop": 20
+    },
+    "result-left-icon > img": {
+        "width": 50,
+        "height": 50,
+        "marginRight": -10
     }
 });

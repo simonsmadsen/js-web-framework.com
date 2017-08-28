@@ -8,4 +8,10 @@ $(document).ready(function(){
 
     return false
   })
+  $('.confirm-delete').click(function(e){
+    if(!confirm('Delete?')){
+      e.preventDefault()
+      return false
+    }
+  })
 })
