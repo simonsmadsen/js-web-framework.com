@@ -26,16 +26,16 @@ module.exports.getUserByAccess = (access) => {
 module.exports.facebookAccessExists = input => facebookAccess.find({ facebook_id: input.userID })
 
 module.exports.createFacebookAccess = async (input) => {
-  const userID = await createUser(input.name)
-  social.getFacebookImage(input.accessToken, `assets/user-images/${userID}.jpg`)
+  const userId = await createUser(input.name)
+  social.getFacebookImage(input.accessToken, `assets/user-images/${userId}.jpg`)
   await facebookAccess.create({
     accessToken: input.accessToken,
     signedRequest: input.signedRequest,
-    user_id: userID,
+    user_id: userId,
     expiresIn: input.expiresIn,
     facebook_id: input.userID
   })
-  return userID
+  return userId
 }
 
 /**
@@ -52,7 +52,7 @@ module.exports.createTwitterAccess = async (input) => {
     accessTokenSecret: input.accessTokenSecret,
     screen_name: input.screen_name,
     twitter_id: input.userId,
-    userId
+    user_id: userId
   })
   return userId
 }
