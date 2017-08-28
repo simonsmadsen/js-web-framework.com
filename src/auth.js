@@ -31,7 +31,7 @@ module.exports.createFacebookAccess = async (input) => {
   await facebookAccess.create({
     accessToken: input.accessToken,
     signedRequest: input.signedRequest,
-    userID,
+    user_id: userID,
     expiresIn: input.expiresIn,
     facebook_id: input.userID
   })
@@ -73,7 +73,7 @@ module.exports.createGoogleAccess = async (input) => {
       'givenName'
     ]), {
       google_id: input.id,
-      userId
+      user_id: userId
     }
   ))
   return userId
