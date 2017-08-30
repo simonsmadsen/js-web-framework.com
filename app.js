@@ -3,10 +3,12 @@ const web = require('js-web')
 const db = web.storage.mysql
 const auth = require('./src/auth.js')
 const parseInputText = require('./src/parse-input-text.js')
+
 /**
  * Injections
 */
 const injections = [
+  web.inject.googleAnalytics(),
   web.inject.jquery(),
   web.inject.bootstrap(),
   web.inject.style('style/syntax.css'),
@@ -20,17 +22,13 @@ const authInjections = questionInjections.concat([
   web.inject.googleAuth('/google-login', 'google-login'),
   web.inject.facebookAuth('/facebook-login', 'fb-login')
 ])
+
 /**
  * Routes
 */
-
 /*
   Docs!
 */
-web.route('/alert', (i, s) => {
-  s.setFlash('warning', 'This is a warning')
-  return web.back()
-})
 web.route('/', () => web.redirect('/docs/routing'))
 web.htmlRoute('/docs/:doc', 'html/docs.html', async input => ({
   doc: input.doc ? `html/docs/${input.doc}.html` : 'html/docs/routing.html'

@@ -165,20 +165,13 @@ export default StyleSheet.create({
         "fontSize": 15,
         "marginLeft": 22,
         "backgroundColor": "#6EC46C",
-        "color": "white"
+        "color": "white",
+        "transition": "0.2s",
+        "transitionTimingFunction": "cubic-bezier(0.04, 3.21, 1, 1)"
     },
     "side-menu login-btn:hover": {
-        "border": "2px solid #6EC46C",
-        "width": "100%",
-        "backgroundColor": "#AADCA8",
-        "color": "white",
-        "paddingTop": 3,
-        "paddingRight": 10,
-        "paddingBottom": 3,
-        "paddingLeft": 10,
-        "textAlign": "center",
-        "fontSize": 15,
-        "marginLeft": 7
+        "transform": "scale(1.1)",
+        "backgroundColor": "#AADCA8"
     },
     "pictures": {
         "textAlign": "center"

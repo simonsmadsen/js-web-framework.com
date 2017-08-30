@@ -10,10 +10,7 @@ web.plainMail(to,subject,text)
   Setup
 </h3>
 <p>
-  To get the mail working you have to fill the <a href="/docs/environment-file">.env</a> file
-  mail section. The section is default setup to gmail, so if
-  you use gmail as stmp provider, you can write you email and password
-  and it will work.
+  To get the mail working, you have to fill the <a href="/docs/environment-file">.env</a>file mail section. The section’s default is setup to Gmail, so if you use Gmail as stmp provider, you can write your email and password. This way it will work
 </p>
 <pre><code>mail_host=smtp.gmail.com
 mail_port=587
@@ -33,9 +30,8 @@ web.plainMail('person@gmail.com','email from js-web',emailBody)
  Html mail
 </h3>
 <p>
-  The html mail, is using a html file as email body and
-  its using the same templating as the <span>htmlRoute()</span> function.
-  You can read more about templating <a href="/docs/templating">here</a>
+  The html mail is using a html file as an email bod, its using the same templating as the <span>htmlRoute()</span> function.
+  You can read more about templating <a href="/docs/templating">here.</a>
 
 </p>
 <pre><code>const web = require('js-web')
