@@ -58,7 +58,7 @@ db.table('twitter_access', {
   accessToken: 'string',
   accessTokenSecret: 'string',
   user_id: 'int',
-  twitter_id: 'int',
+  twitter_id: 'string',
   screen_name: 'string'
 })
 
