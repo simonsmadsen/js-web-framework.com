@@ -14,10 +14,10 @@ export default StyleSheet.create({
         "paddingBottom": 0.5,
         "paddingLeft": 0.5,
         "color": "#383a42",
-        "background": "#F5F5F5"
+        "background": "#ECF1F5"
     },
     "pre": {
-        "background": "#F5F5F5",
+        "background": "#ECF1F5",
         "border": "none",
         "marginTop": 10,
         "marginRight": 10,
@@ -138,13 +138,13 @@ export default StyleSheet.create({
         "height": 284,
         "width": "100%",
         "background": "white",
-        "borderTop": "2px solid #6EC46C"
+        "borderTop": "2px solid #37485F"
     },
     "login-modal modal-content": {
         "height": 200
     },
     "head_title h4": {
-        "color": "#6EC46C",
+        "color": "#37485F",
         "textAlign": "center",
         "fontSize": 25,
         "fontFamily": "Roboto",
@@ -155,7 +155,7 @@ export default StyleSheet.create({
         "marginBottom": 20
     },
     "side-menu login-btn": {
-        "border": "2px solid #6EC46C",
+        "border": "2px solid #37485F",
         "width": "85%",
         "paddingTop": 3,
         "paddingRight": 10,
@@ -164,14 +164,14 @@ export default StyleSheet.create({
         "textAlign": "center",
         "fontSize": 15,
         "marginLeft": 22,
-        "backgroundColor": "#6EC46C",
+        "backgroundColor": "#37485F",
         "color": "white",
         "transition": "0.2s",
         "transitionTimingFunction": "cubic-bezier(0.04, 3.21, 1, 1)"
     },
     "side-menu login-btn:hover": {
         "transform": "scale(1.1)",
-        "backgroundColor": "#AADCA8"
+        "backgroundColor": "#ECF1F5"
     },
     "pictures": {
         "textAlign": "center"

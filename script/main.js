@@ -14,4 +14,7 @@ $(document).ready(function(){
       return false
     }
   })
+  $('#logo').click(function(){
+    window.location = 'http://js-web-framework.com/'
+  })
 })

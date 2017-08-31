@@ -11,21 +11,21 @@ const seed = require('js-web').storage.mysql
   text
  */
 
-const seedCategories = async _ => {
+const seedCategories = async () => {
   const categories = seed.table('categories')
   await categories.truncate()
-  await categories.create({name: 'MYSQL'})
-  await categories.create({name: 'Setup'})
-  await categories.create({name: 'Injection'})
-  await categories.create({name: 'Routing'})
+  await categories.create({ name: 'MYSQL' })
+  await categories.create({ name: 'Setup' })
+  await categories.create({ name: 'Injection' })
+  await categories.create({ name: 'Routing' })
 }
 
-db.table('categories',{
+db.table('categories', {
   id: 'id',
   name: 'name'
 }).then(seedCategories)
 
-db.table('questions',{
+db.table('questions', {
   id: 'id',
   category_id: 'category',
   user_id: 'int',
@@ -43,7 +43,7 @@ db.table('answers', {
   isSolution: 'bool'
 })
 
-db.table('google_access',{
+db.table('google_access', {
   id: 'id',
   resourceName: 'string',
   google_id: 'string',
@@ -71,7 +71,7 @@ db.table('facebook_access', {
   facebook_id: 'string'
 })
 
-db.table('users',{
+db.table('users', {
   id: 'id',
   name: 'string'
 })

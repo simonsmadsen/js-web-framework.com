@@ -41,8 +41,8 @@ const categories = db.table('categories')
 const questions = db.table('questions')
 const answers = db.table('answers')
 const answersExtended = db.table('answers'
-+ ' left join users on users.id = answers.user_id'
-+ ' left join questions on questions.id = answers.question_id'
+  + ' left join users on users.id = answers.user_id'
+  + ' left join questions on questions.id = answers.question_id'
 )
 const questionExtended = db.table('questions'
   + ' left join categories on categories.id = questions.category_id'
