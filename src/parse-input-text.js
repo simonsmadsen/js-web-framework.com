@@ -1,6 +1,7 @@
 const timeAgoInWords = require('time_ago_in_words')
 const ent = require('ent')
 const web = require('js-web')
+const slugify = require('slugify')
 
 const hasCodeBlock = text =>
   text.indexOf('{(') > -1 && text.indexOf(')}') > text.indexOf('{(')
@@ -27,7 +28,7 @@ const clean = text => text
 const formatDate = (row, textField) => {
   row.created = timeAgoInWords(web.moment(row.created).toDate(), false)
   if (row.title) {
-    row.titleLink = clean(row.title)
+    row.titleLink = slugify(row.title)
   }
   row[textField] = enableCodeBlocks(
     ent.encode(row[textField]).replace(/&#13;&#10;/g, '<br />')
