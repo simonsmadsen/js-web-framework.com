@@ -279,4 +279,7 @@ web.twitterRoute('/twitter-login', async (input, session) => {
   return web.redirect('/questions')
 })
 
+//web.notFound('html/docs.html', _ => web.redirect('/'))
+web.notFound(null, _ => web.redirect('/'))
+
 web.start()
