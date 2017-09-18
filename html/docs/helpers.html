@@ -12,8 +12,8 @@
 </p>
 <pre><code>const helpers = web.helpers
 const password = 'mypw'
-const hash = helpers.hash(password)
-if(helpers.compareHash('mypw',hash)){
+const hash = await helpers.hash(password)
+if(await helpers.compareHash('mypw',hash)){
   return web.redirect('/admin')
 }
 return web.back()
