@@ -15,17 +15,24 @@
   text
  */</code></pre>
 <h3>Table(tablename,tableDefinitions)</h3>
-<pre><code>db.table('users',{
-  id: 'id',
-  name: 'string',
-  created: 'datetime'
-})
+<pre><code>const db = require('js-web').migration.mysql
 
-db.table('pets',{
-  id: 'id',
-  user_id: 'int',
-  name: 'string'
-})</code></pre>
+const migrate = async _ => {
+  await db.table('users',{
+    id: 'id',
+    name: 'string',
+    created: 'datetime'
+  })
+  await db.table('pets',{
+    id: 'id',
+    name: 'string',
+    user_id: 'int',
+    created: 'datetime'
+  })
+  process.exit()
+}
+
+migrate()</code></pre>
 
 <h3>Create tables</h3>
 <p>

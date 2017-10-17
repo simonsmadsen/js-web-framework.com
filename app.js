@@ -41,7 +41,7 @@ const authInjections = questionInjections.concat([
 /*
   Docs!
 */
-route('/', () => redirect('/docs/routing'))
+route('/', () => redirect('/docs/intro'))
 htmlRoute('/docs/:doc', 'html/docs.html', async input => ({
   doc: input.doc ? `html/docs/${input.doc}.html` : 'html/docs/routing.html'
 }), injections)

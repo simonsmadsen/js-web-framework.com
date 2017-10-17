@@ -1,19 +1,23 @@
 <h1>Injections</h1>
+<pre><code>import {
+  inject
+} from 'js-web'
+</code></pre>
 <p>Injections allow you to bundle your script and style files to include them on your site.</p>
 <p>
   The recommended way to use injections is to create an injection array.
 </p>
 <pre><code>const injections = [
-    web.inject.jquery(),
-    web.inject.bootstrap(),
-    web.inject.style('style/site.css'),
-    web.inject.script('script/main.js')
+    inject.jquery(),
+    inject.bootstrap(),
+    inject.style('style/site.css'),
+    inject.script('script/main.js')
   ]
 </code></pre>
 <p>
   Then, you can add the <span>injections</span> array to the <span>htmlRoutes</span> as the last parameter.
 </p>
-<pre><code>web.htmlRoute('/','html/index.html', async (input,session,cookie) => {
+<pre><code>htmlRoute('/','html/index.html', async (input,session,cookie) => {
   return {}
 },injections)
 </code></pre>
@@ -21,9 +25,9 @@
 <h2>Inject</h2>
 <h3>Build in libraries</h3>
 <pre><code>const injections = [
-    web.inject.jquery(),
-    web.inject.bootstrap(),
-    web.inject.socketIO()
+    inject.jquery(),
+    inject.bootstrap(),
+    inject.socketIO()
   ]
 </code></pre>
 
@@ -32,8 +36,8 @@
   The inject script can take a file or url.
 </p>
 <pre><code>const injections = [
-    web.inject.script('script/site.js'),
-    web.inject.script('http://cdn.somelib.com/file.js')
+    inject.script('script/site.js'),
+    inject.script('http://cdn.somelib.com/file.js')
   ]
 </code></pre>
 <h3>Inject.style()</h3>
@@ -41,14 +45,14 @@
   The inject style can take css- , sass- and stylus files.
 </p>
 <pre><code>const injections = [
-    web.inject.style('site.sass'),
-    web.inject.script('site.styl'),
-    web.inject.script('site.css')
+    inject.style('site.sass'),
+    inject.script('site.styl'),
+    inject.script('site.css')
   ]
 </code></pre>
 <h2>Google Analytics</h2>
 <pre><code>const injections = [
-    web.inject.googleAnalytics()
+    inject.googleAnalytics()
   ]
 </code></pre>
 <h2>React</h2>
@@ -59,7 +63,7 @@
   Add a react inject to the injections array.
 </p>
 <pre><code>const injections = [
-    web.inject.react('react/app.jsx','app-id')
+    inject.react('react/app.jsx','app-id')
   ]
 </code></pre>
 <p>

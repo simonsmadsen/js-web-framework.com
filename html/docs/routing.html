@@ -2,9 +2,12 @@
 
 <h2>Routing functions</h2>
 
-<pre><code>route()
-postRoute()
-htmlRoute()
+<pre><code>import {
+  htmlRoute,
+  route,
+  postRoute,
+  notFound
+} from 'js-web'
 </code></pre>
 
 <h3>route</h3>
@@ -17,7 +20,7 @@ htmlRoute()
 <p>The function passed to the route can return an object or a redirect. If you pass an object,
   the route function will send the object as a json result.</p>
 
-<pre><code>web.route(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
+<pre><code>route(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
  return {users: arrayOfUsers}
 })
 </code></pre>
@@ -28,7 +31,7 @@ htmlRoute()
 
 <p>The postRoute function is similar to the route except it is responding to a POST request.</p>
 
-<pre><code>web.postRoute(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
+<pre><code>postRoute(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
  return {users: arrayOfUsers}
 })
 </code></pre>
@@ -43,8 +46,18 @@ htmlRoute()
 
 <p>You can read about the injections parameter here <a href="/docs/injections">Injections</a></p>
 
-<pre><code>web.postRoute(&#39;/user-list&#39;, async (input,session,cookie) =&gt; {
- return {users: arrayOfUsers}
+<pre><code>const injections = [
+  inject.style('style/main.css'),
+  inject.script('script/script.js')
+]
+
+htmlRoute('/','html/index.html',(input, session) => {
+  return { hello: 'World' }
+}, injections)
+</code></pre>
+
+<pre><code>htmlRoute('/','html/index.html',(input, session) => {
+return { hello: 'World' }
 })
 </code></pre>
 
@@ -52,7 +65,7 @@ htmlRoute()
 
 <p>You can accept parameters in all the route functions.</p>
 
-<pre><code>web.post(&#39;/user/:id&#39;, async (input,session,cookie) =&gt; {
+<pre><code>post(&#39;/user/:id&#39;, async (input,session,cookie) =&gt; {
  // input.id
 })
 </code></pre>
@@ -60,11 +73,11 @@ htmlRoute()
 <h3>Redirect</h3>
 
 <p>You can return a redirect in all routes.</p>
-<pre><code>web.post('/user/:id', async (input,session,cookie) {
- return web.redirect('/home')
+<pre><code>post('/user/:id', async (input,session,cookie) {
+ return redirect('/home')
 })</code></pre>
-<pre><code>web.post('/user/:id', async (input,session,cookie) {
- return web.back()
+<pre><code>post('/user/:id', async (input,session,cookie) {
+ return back()
 })</code></pre>
 
 <h2>Route callback function</h2>
@@ -114,8 +127,8 @@ htmlRoute()
 <h2>404 / Not found</h2>
 
 <p>Display html.</p>
-<pre><code>web.notFound('html/not-found.html', null ,injections)</code></pre>
+<pre><code>notFound('html/not-found.html', null ,injections)</code></pre>
 
 
 <p>Redirect.</p>
-<pre><code>web.notFound(null, _ => web.redirect('/'))</code></pre>
+<pre><code>notFound(null, _ => redirect('/'))</code></pre>
